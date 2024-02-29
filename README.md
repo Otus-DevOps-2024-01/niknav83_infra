@@ -1,5 +1,7 @@
 # niknav83_infra
 
+## HW05
+
 ## Таблица адресов
 
 | Имя машины     |  Внутренний IPv4 | Публичный IPv4  |
@@ -54,3 +56,28 @@ Host someinternalhost
 Задание с созданием валидного SSL сертификата выполнил взяв свой домен.
 
 https://pritunl.niknav.ru/
+
+
+## HW07
+
+## Адреса для проверки:
+
+testapp_IP = 158.160.105.220
+
+testapp_port = 9292
+
+
+## Команда для создания инстанса в Cloud yandex
+
+
+```
+yc compute instance create \
+  --name reddit-app \
+  --hostname reddit-app \
+  --memory=4 \
+  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+  --metadata serial-port-enable=1 \
+  --metadata-from-file user-data=startup.yml
+
+```
